@@ -25,12 +25,9 @@
 		<sonar.login>squ_712050b2c1457b928a5a5cf299eaa95d074a0b08</sonar.login>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-<properties>
- <maven.compiler.source>1.8</maven.compiler.source>
- <maven.compiler.target>1.8</maven.compiler.target>
-</properties>
 
 	<dependencies>
 		
