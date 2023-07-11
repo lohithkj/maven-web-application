@@ -9,9 +9,9 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Lohith Technologies. Marathahalli,Bengaluru,Karnataka,India </h1>
+<h1 align="center">Welcome to Lohith Technologies. YPR,Bengaluru,Karnataka,India </h1>
 <h1 align="center"> New Batch will be start in August 1st week at 7.30 PM IST - Contact 9980923226 or devopstrainingblr@gmail.com</h1> 
-<h1 align="center"> Lohith Technologies- Very Good Training center for DevOps with AWS in Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
+<h1 align="center"> Lohith Technologies - Very Good Training center for DevOps with AWS in Bangalore India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
 	<h1><h3> Server Side IP Address </h3><br>
