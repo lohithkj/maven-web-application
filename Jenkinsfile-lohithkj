@@ -1,5 +1,11 @@
 node{
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: ''], pipelineTriggers([pollSCM('* * * * *')])])
     def mavenHome = tool name: "maven3.8.6"
+    echo "The Job Name is : ${env.JOB_NAME}"
+    echo "The Node Name is : ${env.NODE_NAME}"
+    echo "The Branch Name is : $env.BRANCH_NAME}"
+    echo "The Build Number is: ${env.BUILD_NUMBER}"
+    echo "The Jenkins Home Path : ${env.JENKINS_HOME}"
     
     stage('Checkout'){
         git branch: 'development', credentialsId: 'ae87b6de-df5a-4734-a744-75cf3e7bb68f', url: 'https://github.com/lohithkj/maven-web-application.git'
