@@ -1,0 +1,42 @@
+pipeline{
+    agent any
+    options {
+  buildDiscarder logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')
+  timestamps()
+}
+    tools{
+        maven "maven3.8.6"
+    }
+    triggers {
+     pollSCM '* * * * *'
+    }
+    stages{
+        stage('CheckoutCode'){
+            steps{
+                git branch: 'development', credentialsId: '', url: 'https://www.github.com/lohithkj/maven-web-application.git'
+            }
+        }
+        stage('Build'){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        stage('SonarQubeCodeReview'){
+            steps{
+                sh "mvn sonar:sonar"
+            }
+        }
+        stage('UploadArtifacts'){
+            steps{
+                sh "mvn deploy"
+            }
+        }
+        stage('deploytoTomcat'){
+            steps{
+                sshagent(['bf20267b-4104-48d6-9191-6f568c9d6bd4']){
+                    sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@"
+                }
+            }
+        }
+    }
+}
