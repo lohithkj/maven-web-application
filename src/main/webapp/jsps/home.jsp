@@ -9,8 +9,8 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Lohith K J Technologies.Marathahalli,Bengaluru,Karnataka,India. </h1>
-<h1 align="center"> New Batch will be start in jan 1st week at 7.30 PM IST - Contact 123456789 or devopstrainingblr@gmail.com</h1> 
+<h1 align="center">Welcome to KJ Technologies.Marathahalli,Bengaluru, Karnataka,India. </h1>
+<h1 align="center"> New Batch will be start in Jan 1st week at 7.30 PM IST - Contact 123456789 or devopstrainingblr@gmail.com</h1> 
 <h1 align="center"> Lohith Technologies - Very Good Training center for DevOps with AWS India and also for Job Assitance Job Support also...Teaching Real Time scnerios</h1>
 <hr>
 <br>
