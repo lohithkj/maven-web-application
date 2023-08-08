@@ -1,11 +1,12 @@
 pipeline{
     agent any
-parameters {
-  choice choices: ['master', 'development', 'qa', 'uat', 'preprod'], description: 'Please select the branch ', name: 'BranchName'
-}
+
         tools{
             maven "maven3.8.4"
         }
+parameters {
+  choice choices: ['master', 'development', 'qa', 'uat', 'preprod'], description: 'Please select the branch ', name: 'BranchName'
+}
         stages{
             stage('CheckoutCode'){
                 steps{
