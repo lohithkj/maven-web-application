@@ -1,12 +1,15 @@
 pipeline{
     agent any
+parameters {
+  choice choices: ['master', 'development', 'qa', 'uat', 'preprod'], description: 'Please select the branch ', name: 'BranchName'
+}
         tools{
             maven "maven3.8.4"
         }
         stages{
             stage('CheckoutCode'){
                 steps{
-                 git branch: 'development', url: 'https://github.com/lohithkj/maven-web-application.git'
+                 git branch: '${params.BranchName}', url: 'https://github.com/lohithkj/maven-web-application.git'
                 }
             }
             stage('Build'){
