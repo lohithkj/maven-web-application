@@ -1,0 +1,36 @@
+pipeline{
+    agent any
+        tools{
+            maven "maven3.8.4"
+        }
+        stages{
+            stage('CheckoutCode'){
+                steps{
+                 git branch: 'development', url: 'https://github.com/lohithkj/maven-web-application.git'
+                }
+            }
+            stage('Build'){
+                steps{
+                    sh "mvn clean package"
+                }
+            }
+            stage('Sonarqubecodereview'){
+                steps{
+                    sh "mvn sonar:sonar"
+                }
+            }
+            stage('UploadArtifact'){
+                steps{
+                    sh "mvn deploy"
+                }
+            }
+            stage('DeployToContainer'){
+                steps{
+                    sshagent(['7be32c12-aa14-49aa-aa21-3e42b937de08']){
+                        sh "scp -o StrictHostKeyChecking=no target/*.war ec2-user@3.109.60.59:/opt/apache-tomcat-9.0.78/webapps"
+                    }
+                }
+            }
+        }
+        
+    }
